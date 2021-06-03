@@ -1,0 +1,178 @@
+@import "plantilla";
+
+section{
+
+	&.home{
+		background: url("../img/fondo4.jpg") center no-repeat;
+		background-size: cover;
+
+		&:before{
+			content: "";
+			top: 0;
+			left: 0;
+			z-index: 1;
+			width: 100%;
+			height: 100%;
+			position: absolute;
+			background: rgba(0,0,0,0.3);
+		}
+	}
+
+	&.service{
+		min-height: 50vh;
+
+		.content{
+			float: left;
+			width: 100%;
+			display: block;
+
+			.item {
+				margin: 5px;
+				float: left;
+				color: #FFF;
+				padding: 5px;
+				text-align: center;
+				transition: all 0.5s;
+				display: inline-block;
+				text-decoration: none;
+				width: calc(calc(100% / 4) - 10px);
+
+				@media only screen and (max-width: 766px){
+					width: calc(100% - 10px);
+				}
+
+				.image img{
+					float: none;
+					width: 200px;
+					padding: 20px;
+					transition: all 0.5s;
+				}
+
+				.text{
+					display: block;
+					font-size: 2em;
+					padding: 10px 10px;
+					color: $color-blue;
+					transition: all 0.5s;
+					font-family: "Branding-B";
+				}
+
+				&:hover{
+					.image img{
+						padding: 0px;
+					}
+					.text{
+						padding: 5px 10px;
+						font-size: 2.5em;
+					}
+				}
+			}
+		}
+	}
+
+	&.blank .blog_home{
+
+		.content{
+			float: left;
+			display: block;
+			padding: 30px 10px;
+
+			.item{
+				width: 100%;
+				display: block;
+				perspective: 700px;
+				transition: all 3s;
+
+				@media only screen and (max-width: 766px){
+					perspective: none;
+				}
+
+				.image,
+				.description{
+					margin: 5px;
+					color: $color-blue;
+					transition: all 0.5s;
+					display: inline-block;
+				}
+
+				.image{
+					width: calc(30% - 10px);
+					transition: transform 500ms;
+					transform: rotateY(0deg);
+
+					@media only screen and (max-width: 766px){
+						width: 100%;
+					}
+
+					img{
+						width: 100%;
+						border-radius: 50%;
+						border: 3px solid #A9A9A9;
+						box-shadow: 3px 3px 3px #CCCCCC;
+					}
+				}
+
+				.description{
+					padding: 5em 20px;
+					width: calc(70% - 10px);
+
+					@media only screen and (max-width: 766px){
+						width: 100%;
+						padding: 10px;
+						text-align: left;
+					}
+
+					.title{
+						font-size: 2em;
+						text-decoration: underline;
+					}
+				}
+
+				&.left{
+					float: left;
+
+					.image,
+					.description{
+						float: left;
+						text-align: right;
+
+						@media only screen and (max-width: 766px){
+							text-align: left;
+						}
+					}
+
+					&:hover{
+						.image{
+							transition: transform 1000ms;
+							transform: rotateY(65deg);
+
+							@media only screen and (max-width: 766px){
+								transform: none;
+							}
+						}
+					}
+				}
+				&.right{
+					float: right;
+
+					.image,
+					.description{
+						float: right;
+						text-align: left;
+					}
+
+					&:hover{
+						.image{
+							transition: transform 1000ms;
+							transform: rotateY(-65deg);
+
+							@media only screen and (max-width: 766px){
+								transform: none;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,662 @@
+@import "reset";
+
+$color-blue: #011254;
+$color-orange: #ED4822;
+$color-yellow: #EEA81C;
+
+.container{
+	width: 1200px;
+	margin: 0 auto;
+	max-width: 100%;
+}
+
+header.menu{
+	margin: 0;
+	z-index: 10;
+	width: 100%;
+	float: left;
+	padding: 5px;
+	display: block;
+	color: #FFFFFF;
+	position: relative;
+	background: rgb(5,29,87);
+	box-shadow: 3px 3px 3px #383838;
+
+	&.fixed{
+		position: fixed;
+	}
+
+	.container{
+		padding: 0px 10px;
+
+		.toggle{
+			display: none;
+
+			@media only screen and (max-width: 766px){
+				float: right;
+				color: #FFFFFF;
+				font-size: 40px;
+				display: inline-block;
+			}
+		}
+
+		.logo{
+			float: left;
+			height: 50px;
+			padding: 5px;
+			position: relative;
+			display: inline-block;
+
+			img{
+				width: auto;
+				float: left;
+				height: 100%;
+				position: relative;
+			}
+		}
+	
+		.nav{
+			float: right;
+			padding: 15px;
+			list-style: none;
+
+			@media only screen and (max-width: 766px){
+				float: left;
+				padding: 10px;
+				display: none;
+				color: #000000;
+				position: relative;
+				background: #FFFFFF;
+			}
+
+			.item{
+				float: left;
+
+				@media only screen and (max-width: 766px){
+					width: 100%;
+					display: block;
+					padding: 5px 10px;
+					text-align: center;
+					border-bottom: 1px solid #CCCCCC;
+				}
+
+				.link{
+					padding: 10px;
+					color: inherit;
+					font-size: 16px;
+					text-decoration: none;
+					transition: color 0.5s;
+					font-family: "Branding-B";
+					text-transform: Capitalice;
+
+					&:hover{
+						color: $color-orange;
+					}
+
+					@media only screen and (max-width: 766px){
+						font-size: 20px;
+					}
+
+					i.fa{
+						margin-right: 5px;
+					}
+				}
+			}
+		}
+	}
+}
+
+section{
+	margin: 0;
+	padding: 0;
+	float: left;
+	width: 100%;
+	display: block;
+	position: relative;
+	background: #FFFFFF;
+
+	@media only screen and (max-width: 766px){
+		padding: 10px !important;
+		min-height: auto;
+	}
+
+	.container{
+		width: 1200px;
+		margin: 0 auto;
+		max-width: 100%;
+	}
+
+	&.home{
+		float: left;
+		color: #FFFFFF;
+		margin: 0 auto;
+		min-height: 50vh;
+		position: relative;
+		padding: 0 !important;
+
+		@media only screen and (max-width: 766px){
+			min-height: 50vh;
+		}
+	}
+
+	&.blank{
+		float: left;
+		padding: 60px 0px;
+		
+		&.spectre{
+			background: url("../img/bg_spectre.png") top;
+			background-size: cover;
+		}
+
+		&.orange{
+			background-color: $color-orange !important;
+		}
+
+		&.yellow{
+			background-color: $color-yellow !important;
+		}
+
+		&.blue{
+			background-color: #011254 !important;
+		}
+
+		&.left{
+
+			.barras{
+				right: 0;
+			}
+
+			.container .title h2{
+				float: left;
+				text-align: left;
+
+				@media only screen and (max-width: 766px){
+					font-size: 2.5em;
+				}
+			}
+
+			.hr_bottom{
+				right: 0;
+
+				&.left{
+					left: 0;
+
+					&.orange{
+						transform: rotate(180deg);
+					}
+				}
+
+				&.right{
+					right: 0;
+					float: right;
+
+					&.blue{
+						transform: rotate(180deg);
+					}
+				}
+			}
+		}
+
+		&.right{
+
+			.barras{
+				left: 0;
+			}
+
+			.container .title h2{
+				float: right;
+				text-align: right;
+
+				@media only screen and (max-width: 766px){
+					font-size: 2.5em;
+				}
+			}
+
+			.hr_bottom{
+				left: 0;
+
+				&.blue{
+					right: 0;
+					transform: rotate(180deg);
+				}
+			}
+		}
+
+		.title{
+			float: left;
+			width: 100%;
+			position: relative;
+
+
+			h2{
+				width: 100%;
+				display: block;
+				color: #F4CF00;
+				font-size: 5em;
+				font-weight: bold;
+				margin: 0 0 30px 0;
+
+				@media only screen and (max-width: 766px){
+					font-size: 300%;
+				}
+			}
+
+			h3{
+				width: 100%;
+				display: block;
+				color: #F4CF00;
+				font-size: 5em;
+				font-weight: bold;
+				margin: 0 0 30px 0;
+
+				@media only screen and (max-width: 766px){
+					font-size: 250%;
+				}
+			}
+		}
+
+		&.yellow .container .title h2{
+			color: $color-orange;
+		}
+
+		&.orange .container .title{
+
+			p{
+				padding: 10px;
+				font-size: 1.5em;
+
+				@media only screen and (max-width: 766px){
+					font-size: 1.5em;
+				}
+
+				&.bold{
+					font-weight: bold;
+				}
+			}
+
+			.line{
+				width: 100%;
+				float: left;
+				margin: 10px;
+				display: block;
+				position: relative;
+				text-align: center;
+
+				hr{
+					width: 40%;
+					height: 2px;
+					margin: 0 auto;
+					color: #FFFFFF;
+				}
+			}
+
+
+			.block{
+				float: left;
+				width: 100%;
+				display: block;
+				margin-top: 5px;
+
+				strong{
+					display: block;
+					color: #011254;
+					font-size: 1.5em;
+				}
+				span{
+					color: #011254;
+				}
+			}
+		}
+
+	}
+
+	.barras{
+		top: 70px;
+		width: 70px;
+		position: absolute;
+
+		@media only screen and (max-width: 766px){
+			width: 20px;
+		}
+	}
+
+	.counter .item{
+		float: left;
+		text-align: center;
+		display: inline-block;
+		width: calc(calc(100% / 3) - 10px);
+
+		@media only screen and (max-width: 766px){
+			width: 100%;
+		}
+
+		.number{
+			font-size: 10em;
+			color: $color-orange;
+
+			@media only screen and (max-width: 766px){
+				font-size: 5em;
+			}
+		}
+
+		span.text{
+			font-size: 2.5em;
+			color: $color-yellow;
+
+			@media only screen and (max-width: 766px){
+				font-size: 1.5em;
+			}
+		}
+	}
+
+	&.slider-content{
+		width: 100%;
+		float: left;
+		padding: 60px;
+		display: block;
+		min-height: auto;
+
+		.container{
+			z-index: 3;
+			width: 1200px;
+			display: block;
+			margin: 0 auto;
+			position: relative;
+			text-align: center;
+
+			h2{
+				color: #F4CF00;
+				margin: 20px 5px;
+				font-size: 3.5em;
+			}
+
+			.slick-prev:before,
+			.slick-next:before{
+				color: #000000;
+			}
+
+			.slider{
+				margin-bottom: 20px;
+			}
+
+			$height-slide: 200px;
+
+			.item{
+				float: left;
+				margin: 10px;
+				height: auto;
+				height: calc($height-slider + 50px);
+				color: inherit;
+				text-align: center;
+				position: relative;
+				display: inline-block;
+				text-decoration: none;
+				width: calc(33% - 20px);
+
+				&:visited{
+					color: inherit;
+				}
+
+				img, span{
+					float: none;
+					margin: 0 auto;
+					display: block;
+					max-width: 100%;
+					text-aling: center;
+				}
+
+				img{
+					height: $height-slide;
+				}
+
+				span{
+					width: 100%;
+					display: block;
+					margin: 10px 0px;
+				}
+			}
+		}
+	}
+
+	&.gallery .items{
+		width: 100%;
+		float: left;
+		display: block;
+
+		.gallery_item{
+			float: left;
+			padding: 10px;
+			width: 24.99999%;
+			position: relative;
+			display: inline-block;
+
+			@media only screen and (max-width: 700px) {
+				width: 49.99999%;
+				margin: 6px 0;
+			}
+
+			@media only screen and (max-width: 500px) {
+				width: 100%;
+			}
+
+			.item{
+				width: 100%;
+				float: left;
+				height: 200px;
+				display: block;
+				overflow: hidden;
+				position: relative;
+				background: #FFFFFF;
+				box-shadow: 6px 6px 6px #323232;
+
+				&::hover {
+					border: 1px solid #777777;
+				}
+
+				a{
+					width: 100%;
+					float: left;
+					padding: 15px;
+					display: block;
+					position: relative;
+
+					img{
+						left: 0;
+						top: -100%;
+						float: left;
+						width: 100%;
+						height: auto;
+						display: block;
+						position: absolute;
+					}
+				}
+
+				.desc{
+					left: 0;
+					bottom: 0;
+					width: 100%;
+					float: left;
+					padding: 5px;
+					display: block;
+					color: #FFFFFF;
+					position: absolute;
+					text-decoration: none;
+					font-family: "Branding-B";
+					background: rgba(0,0,0,0.5);
+				}
+			}
+		}
+	}
+
+	&.contact{
+		padding-bottom: 60px;
+		background-color: #011254 !important;
+
+		.container{
+
+			.group{
+				width: 100%;
+				float: left;
+				display: block;
+				margin: 10px 0px;
+				position: relative;
+				border-radius: 5px;
+				border: 1px solid #CCCCCC;
+			}
+
+			.title span{
+				margin: 10px 10px;
+				color: #F2AB1C;
+			}
+
+			.form-group{
+				width: 100%;
+				float: left;
+				border-bottom: 1px solid #CCCCCC;
+			}
+
+			.size2 input{
+				width: 50%;
+				float: left;
+
+				@media only screen and (max-width: 766px){
+					width: 100%;
+					border-bottom: 1px solid #CCCCCC;
+				}
+			}
+
+			.center{
+				width: 100%;
+				float: left;
+				text-align: center;
+			}
+		}
+
+		input[type="text"],
+		input[type="email"],
+		textarea{
+			width: 100%;
+			border: none;
+			color: #FFFFFF;
+			font-size: 17px;
+			padding: 10px 15px;
+			background: transparent;
+			font-family: "Montserrat";
+		}
+
+		input[type="submit"]{
+			border: 0;
+			height: auto;
+			font-size: 17px;
+			color: #FFFFFF;
+			font-size: 20px;
+			font-weight: bold;
+			text-align: center;
+			padding: 5px 20px;
+			border-radius: 10px;
+			text-decoration: none;
+			background: rgb(199,78,51);
+		}
+
+		.footer{
+			width: 100%;
+			float: left;
+			display: block;
+			position: relative;
+
+			.block{
+				float: left;
+				width: 100%;
+				display: block;
+				margin: 20px 0;
+				color: #F4CF00;
+
+				ul{
+					list-style: none;
+
+					strong{
+						width: 100%;
+						display: block;
+					}
+				}
+			}
+
+			.left,
+			.right{
+				width: 50%;
+				float: left;
+				display: inline-block;
+
+				@media only screen and (max-width: 766px){
+					width: 100%;
+					display: block;
+				}
+
+				.text{
+					right: 0;
+					bottom: 0;
+					position: absolute;
+
+					@media only screen and (max-width: 766px){
+						left: 0;
+						right: auto;
+						float: left;
+						position: relative;
+					}
+
+					a{
+						padding: 5px;
+						color: #F4CF00;
+						font-weight: bold;
+						transition: all 0.5s;
+						text-decoration: none;
+						display: inline-block;
+
+						&:hover{
+							color: #ED4822;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+footer{
+	width: 100%;
+	float: left;
+	padding: 10px;
+	display: block;
+	color: #FFFFFF;
+	background: #1A1A1A;
+
+	.container{
+		width: 1200px;
+		margin: 0 auto;
+		max-width: 100%;
+
+		.copyright,
+		.desing{
+			width: 50%;
+			float: left;
+			display: inline-block;
+
+			@media only screen and (max-width: 766px){
+				width: 100%;
+			}
+		}
+
+		.desing{
+			text-align: right;
+
+			@media only screen and (max-width: 766px){
+				text-align: left;
+			}
+
+			a{
+				margin-left: 5px;
+				color: steelblue;
+			}
+		}
+	}
+}
